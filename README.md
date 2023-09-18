@@ -2,7 +2,7 @@ Javascript focused project involving event listeners, getter/setters, objects, l
 
 Application Page Deployment: https://r-basu.github.io/multichoice-quiz
 
-![Preview of website](.\assets\images\04-web-apis-homework-demo.gif)
+![Preview of website](./assets/images/multichoicequiz.png)
 
 ================================
 ## User Story
