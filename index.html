@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Multiple Choice Quiz built in Javascript" />
-    <title>Multi-choice Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Multiple Choice Quiz built in Javascript" />
+  <title>Multi-choice Quiz</title>
 </head>
-
 <body>
-    <header>
-        <nav href="#scores-container">High Scores</nav>
-        <h1>Multiple Choice Quiz</h1>
-    </header>
-    
-    <main>
-        <section id="questions-container">
+  <header>
+    <a id="high-scores" href="#">High Scores</a>
+    <h1>Multiple Choice Quiz</h1>
+    <p>Timer: <span id="timer">75</span> seconds left</p>
+  </header>
 
-        </section>
+  <main>
+    <section id="questions-container">
+      <button id="start-quiz">Start</button>
+      <div id="question-container">
+      </div>
+      <div id="answer-options">
+        <!-- JS inputted answers -->
+      </div>
+      <p id="result"></p>
+    </section>
 
-        <section id="results-container">
+    <section id="results-container"></section>
 
-        </section>
+    <section id="scores-container"></section>
 
-        <section id="scores-container">
+    <input type="text" id="initials-input" placeholder="Enter your initials">
+<button id="save-score">Save Score</button>
+  </main>
 
-        </section>
-    </main>
-
-    <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
