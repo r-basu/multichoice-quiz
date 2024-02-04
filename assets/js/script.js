@@ -93,16 +93,46 @@ function saveScore() {
   const initialsInput = document.getElementById("initials-input");
   const initials = initialsInput.value;
 
-  // Save the score using the initials and scoreTotal
-  const data = {
-    initials,
-    scoreTotal,
+  //Retrieve existing scores
+  const savedData = localStorage.getItem("quizData");
+  let savedScores = [];
+
+  if (savedData) {
+    savedScores = JSON.parse(savedData);
   }
 
-  const dataString = JSON.stringify(data)
-  localStorage.setItem('quizData', dataString)
+  // Add the current score to the array
+  savedScores.push({ initials, scoreTotal });
+
+  // Save to localstorage
+  localStorage.setItem('quizData', JSON.stringify(savedScores))
 }
 
 // Event listener for the start button
 const startButton = document.getElementById("start-quiz");
 startButton.addEventListener("click", startQuiz);
+
+
+// Function to handle displaying high scores
+function displayHighScores() {
+  const scoresContainer = document.getElementById("scores-container");
+  scoresContainer.innerHTML = ""; // Clear previous scores
+
+  // Retrieve saved data from localStorage
+  const savedData = localStorage.getItem("quizData");
+
+  if (savedData) {
+    const savedScores = JSON.parse(savedData);
+
+    // Iterate over saved scores and create list items
+    for (const score of savedScores) {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${score.initials}: ${score.scoreTotal}`;
+      scoresContainer.appendChild(listItem);
+    }
+  }
+}
+
+// Event listener for the "High Scores" element
+const highScoresElement = document.getElementById("high-scores");
+highScoresElement.addEventListener("click", displayHighScores);
